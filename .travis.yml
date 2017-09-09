@@ -6,8 +6,6 @@ group: edge
 matrix:
   include:
     - os: linux
-      env: TESTENV=py34-cov
-    - os: linux
       env: DOCKER=debian-jessie
       services: docker
     - os: linux
