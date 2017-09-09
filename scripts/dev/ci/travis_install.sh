@@ -60,7 +60,7 @@ brew_install() {
 
 pip_install() {
     # this uses python2
-    travis_retry sudo -H python -m pip install "$@"
+    travis_retry python -m pip install "$@"
 }
 
 npm_install() {
