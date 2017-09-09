@@ -111,8 +111,8 @@ fi
 
 pyqt_pkgs="python3-pyqt5 python3-pyqt5.qtquick python3-pyqt5.qtwebkit python3-pyqt5.qtsql libqt5sql5-sqlite"
 
-pip_install pip tox
-# pip_install -r misc/requirements/requirements-tox.txt
+pip_install pip
+pip_install -r misc/requirements/requirements-tox.txt
 
 pip --version
 tox --version
