@@ -43,6 +43,10 @@ matrix:
       env: TESTENV=flake8
     - os: linux
       env: TESTENV=docs
+      addons:
+         apt:
+           packages:
+           - asciidoc
     - os: linux
       env: TESTENV=vulture
     - os: linux
