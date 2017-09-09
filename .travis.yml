@@ -53,7 +53,7 @@ matrix:
       env: TESTENV=check-manifest
     - os: linux
       env: TESTENV=eslint
-      # language: javascript
+      language: node_js
   allow_failures:
     - os: osx
       env: TESTENV=py36 OSX=elcapitan
