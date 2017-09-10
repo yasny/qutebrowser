@@ -49,8 +49,7 @@ brew_install() {
 }
 
 pip_install() {
-    # this uses python2
-    travis_retry python -m pip install "$@"
+    travis_retry python3 -m pip install "$@"
 }
 
 npm_install() {
