@@ -55,6 +55,8 @@ matrix:
     - os: linux
       env: TESTENV=eslint
       language: node_js
+      python: null
+      node_js: node
   allow_failures:
     - os: osx
       env: TESTENV=py36 OSX=elcapitan
