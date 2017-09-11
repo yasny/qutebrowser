@@ -137,6 +137,8 @@ def is_ignored_chromium_message(line):
         'WebFrame LEAKED 1 TIMES',
 
         # macOS on Travis
+        # [5140:5379:0911/063441.239771:ERROR:mach_port_broker.mm(175)]
+        # Unknown process 5176 is sending Mach IPC messages!
         'Unknown process * is sending Mach IPC messages!',
     ]
     return any(testutils.pattern_match(pattern=pattern, value=message)
