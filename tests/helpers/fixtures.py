@@ -38,7 +38,7 @@ import pytest
 import py.path  # pylint: disable=no-name-in-module
 
 import helpers.stubs as stubsmod
-from qutebrowser.config import config, configdata, configtypes
+from qutebrowser.config import config, configdata, configtypes, configexc
 from qutebrowser.utils import objreg, standarddir
 from qutebrowser.browser.webkit import cookies
 from qutebrowser.misc import savemanager, sql
@@ -218,7 +218,11 @@ def config_stub(stubs, monkeypatch, configdata_init):
     container = config.ConfigContainer(conf)
     monkeypatch.setattr(config, 'val', container)
 
-    configtypes.Font.monospace_fonts = container.fonts.monospace
+    try:
+        configtypes.Font.monospace_fonts = container.fonts.monospace
+    except configexc.NoOptionError:
+        # Completion tests patch configdata so fonts.monospace is unavailable.
+        pass
 
     conf.val = container  # For easier use in tests
     return conf
