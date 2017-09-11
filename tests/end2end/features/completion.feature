@@ -50,6 +50,7 @@ Feature: Using completion
         When I run :set-cmd-text -s :bind X
         Then the completion model should be bind
 
+    @qtwebengine_mac_xfail: See #2956
     Scenario: Using session completion
         Given I open data/hello.txt
         And I run :session-save hello
